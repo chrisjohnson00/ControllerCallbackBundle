@@ -1,0 +1,26 @@
+{
+    "name": "chrisjohnson00/controller-callback-bundle",
+    "description": "A Symfony 2 bundle to add controller pre/post calls via route configuration",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Johnson",
+            "homepage": "https://github.com/chrisjohnson00"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://github.com/chrisjohnson00/ControllerCallbackBundle/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/symfony": ">=2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "ChrisJohnson00\\ControllerCallbackBundle": ""
+        }
+    },
+    "target-dir" : "ChrisJohnson00/ControllerCallbackBundle"
+}
