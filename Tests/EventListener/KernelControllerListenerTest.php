@@ -41,7 +41,7 @@ class KernelControllerListenerTest extends \PHPUnit_Framework_TestCase
     public function testPreActionMethod()
     {
         $this->configureMock();
-        $this->listener->setController(array($this->controller));
+        $this->listener->setController(array($this->controller)); //symfony provides the controller as an array containing an object
         $this->listener->setRouteParameters($this->parameters);
         $this->listener->preActionMethod();
     }
@@ -49,7 +49,7 @@ class KernelControllerListenerTest extends \PHPUnit_Framework_TestCase
     public function testPostActionMethod()
     {
         $this->configureMock();
-        $this->listener->setController(array($this->controller));
+        $this->listener->setController(array($this->controller)); //symfony provides the controller as an array containing an object
         $this->listener->setRouteParameters($this->parameters);
         $this->listener->postActionMethod();
     }
