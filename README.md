@@ -4,7 +4,7 @@ ControllerCallbackBundle
 A Symfony 2 bundle which adds the ability to configure a controller function call before or after the action is called
 
 ## Continuous Integration
-[![Build Status](https://travis-ci.org/chrisjohnson00/ControllerCallbackBundle.png?branch=master)](https://travis-ci.org/chrisjohnson00/ControllerCallbackBundle)
+[![Build Status](https://travis-ci.org/chrisjohnson00/ControllerCallbackBundle.png?branch=master)](https://travis-ci.org/chrisjohnson00/ControllerCallbackBundle) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chrisjohnson00/ControllerCallbackBundle/badges/quality-score.png?s=8dbcaa1baf707dad71ec2b514adb72d2717dd2bf)](https://scrutinizer-ci.com/g/chrisjohnson00/ControllerCallbackBundle/) [![Code Coverage](https://scrutinizer-ci.com/g/chrisjohnson00/ControllerCallbackBundle/badges/coverage.png?s=555f42d9885f22b76fb170778802917cdfe62fcc)](https://scrutinizer-ci.com/g/chrisjohnson00/ControllerCallbackBundle/)
 
 Installation
 ------------
