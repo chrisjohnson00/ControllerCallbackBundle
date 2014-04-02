@@ -44,6 +44,7 @@ class KernelControllerListenerTest extends \PHPUnit_Framework_TestCase
     {
         $this->listener->setController(array($this->controller));
         $this->listener->setRouteParameters($this->parameters);
+        die(var_dump($this->controller));
         $this->listener->preActionMethod();
     }
 
