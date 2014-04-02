@@ -23,7 +23,7 @@ class KernelControllerListenerTest extends \PHPUnit_Framework_TestCase
                                   'param2'           => 'value2',
                                   'preActionMethod'  => 'doSomething',
                                   'postActionMethod' => 'doSomething');
-        $this->controller = $this->getMock('SomeClass');
+        $this->controller = $this->getMock('SomeClass',array('doSomething'));
         //internal assertion that the mock->doSomething() is called one time with this->parameters as the input
         $this->controller->expects($this->once())->method('doSomething')->with($this->parameters);
     }
