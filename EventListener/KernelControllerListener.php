@@ -32,7 +32,7 @@ class KernelControllerListener
         $this->controller = $controller;
     }
 
-    public function getControler()
+    public function getController()
     {
         return $this->controller;
     }
