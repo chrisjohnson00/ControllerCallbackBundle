@@ -32,9 +32,19 @@ class KernelControllerListener
         $this->controller = $controller;
     }
 
+    public function getControler()
+    {
+        return $this->controller;
+    }
+
     public function setRouteParameters($parameters)
     {
         $this->routeParameters = $parameters;
+    }
+
+    public function getRouteParameters()
+    {
+        return $this->routeParameters;
     }
 
     public function preActionMethod()
