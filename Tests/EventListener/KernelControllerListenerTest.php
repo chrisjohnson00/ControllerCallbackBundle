@@ -12,7 +12,6 @@ use ChrisJohnson00\ControllerCallbackBundle\EventListener\KernelControllerListen
 
 class KernelControllerListenerTest extends \PHPUnit_Framework_TestCase
 {
-
     private $listener;
     private $parameters;
     private $controller;
@@ -59,7 +58,7 @@ class KernelControllerListenerTest extends \PHPUnit_Framework_TestCase
 
 class SomeClass
 {
-    public function doSomething()
+    public function doSomething($params)
     {
         return true;
     }
