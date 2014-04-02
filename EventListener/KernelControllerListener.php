@@ -5,30 +5,54 @@ use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
 class KernelControllerListener
 {
+    private $controller;
+    private $routeParameters;
+
     public function onKernelController(FilterControllerEvent $event)
     {
-        $controller = $event->getController();
+        $this->setController($event->getController());
 
         /*
          * $controller passed can be either a class or a Closure. This is not usual in Symfony2 but it may happen.
          * If it is a class, it comes in array format
          */
-        if (!is_array($controller))
+        if (!is_array($this->controller))
         {
             return;
         }
 
-        $request         = $event->getRequest();
-        $routeParameters = $request->get('_route_params');
-        if (isset($routeParameters['preActionMethod']))
+        $request = $event->getRequest();
+        $this->setRouteParameters($request->get('_route_params'));
+        $this->preActionMethod();
+        $this->postActionMethod();
+    }
+
+    public function setController($controller)
+    {
+        $this->controller = $controller;
+    }
+
+    public function setRouteParameters($parameters)
+    {
+        $this->routeParameters = $parameters;
+    }
+
+    public function preActionMethod()
+    {
+        if (isset($this->routeParameters['preActionMethod']))
         {
-            $method = $routeParameters['preActionMethod'];
-            $controller[0]->{$method}($routeParameters);
+            $method = $this->routeParameters['preActionMethod'];
+            $this->controller[0]->{$method}($this->routeParameters);
         }
-        if (isset($routeParameters['postActionMethod']))
+    }
+
+    public function postActionMethod()
+    {
+        if (isset($this->routeParameters['postActionMethod']))
         {
-            $method = $routeParameters['postActionMethod'];
-            $controller[0]->{$method}($routeParameters);
+            $method = $this->routeParameters['postActionMethod'];
+            $this->controller[0]->{$method}($this->routeParameters);
         }
+
     }
 }
