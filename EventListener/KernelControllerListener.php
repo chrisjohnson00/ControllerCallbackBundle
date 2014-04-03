@@ -3,11 +3,18 @@ namespace ChrisJohnson00\ControllerCallbackBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
+/**
+ * Class KernelControllerListener
+ * @package ChrisJohnson00\ControllerCallbackBundle\EventListener
+ */
 class KernelControllerListener
 {
     private $controller;
     private $routeParameters;
 
+    /**
+     * @param FilterControllerEvent $event
+     */
     public function onKernelController(FilterControllerEvent $event)
     {
         $this->setController($event->getController());
@@ -27,21 +34,33 @@ class KernelControllerListener
         $this->postActionMethod();
     }
 
+    /**
+     * @param $controller
+     */
     public function setController($controller)
     {
         $this->controller = $controller;
     }
 
+    /**
+     * @return mixed
+     */
     public function getController()
     {
         return $this->controller;
     }
 
+    /**
+     * @param $parameters
+     */
     public function setRouteParameters($parameters)
     {
         $this->routeParameters = $parameters;
     }
 
+    /**
+     * @return mixed
+     */
     public function getRouteParameters()
     {
         return $this->routeParameters;
