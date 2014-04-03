@@ -40,7 +40,7 @@ Example Usage
 -------------
 
 ```xml
-    <route id="spell_read" pattern="/api/quest/{id}" methods="GET">
+    <route id="quest_read" pattern="/api/quest/{id}" methods="GET">
         <default key="repository">FTWGuildBundle:Quest</default>
         <default key="type">read</default>
         <default key="_controller">FTWGuildBundle:Api:index</default>
