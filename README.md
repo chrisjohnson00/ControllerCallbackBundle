@@ -35,3 +35,29 @@ Or on the command line with
         );
     }
 ```
+
+Example Usage
+-------------
+
+```xml
+    <route id="spell_read" pattern="/api/quest/{id}" methods="GET">
+        <default key="repository">FTWGuildBundle:Quest</default>
+        <default key="type">read</default>
+        <default key="_controller">FTWGuildBundle:Api:index</default>
+        <default key="preActionMethod">setRouteParameters</default>
+    </route>
+```
+
+The above will result in calling the Quest controller method named setRouteParameters by passing in an associative array of all keys (including the id in the uri)
+
+The setRouteParameters method may look something like
+
+```php
+    public function setRouteParameters(array $parameters)
+    {
+        $this->setRepository($parameters['repository']);
+        $this->setType($parameters['type']);
+        if (isset($parameters['id']))
+            $this->setId($parameters['id']);
+    }
+```
