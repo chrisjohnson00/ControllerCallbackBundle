@@ -48,7 +48,7 @@ Example Usage
     </route>
 ```
 
-The above will result in calling the Quest controller method named setRouteParameters by passing in an associative array of all keys (including the id in the uri)
+The above will result in calling the Api controller method named setRouteParameters by passing in an associative array of all keys (including the id in the uri)
 
 The setRouteParameters method may look something like
 
