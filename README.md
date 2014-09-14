@@ -10,7 +10,7 @@ Installation
 ------------
 ### Installation by Composer
 
-Add ApiProfilerBundle bundle as a dependency to the composer.json of your application
+Add ControllerCallbackBundle bundle as a dependency to the composer.json of your application
 
     "require": {
         ...
@@ -21,7 +21,7 @@ Add ApiProfilerBundle bundle as a dependency to the composer.json of your applic
 Or on the command line with
 `composer require chrisjohnson00/controller-callback-bundle`
 
-## Add ApiProfilerBundle to your application kernel.
+## Add ControllerCallbackBundle to your application kernel.
 
 ```php
 // app/AppKernel.php
